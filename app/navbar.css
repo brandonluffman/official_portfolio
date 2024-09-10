@@ -1,0 +1,77 @@
+.navbar-container {
+    position: fixed;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    z-index: 999999;
+    transform: translateY(20px);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(30deg, rgb(26, 25, 26), black);
+    border: 1px solid rgb(30, 30, 30);
+    border-radius: 40px;
+    /* padding: 0rem 2rem; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(50, 50, 50, 0.3) 0px 1px 3px -1px;
+        overflow: hidden;
+        border: 1px solid rgb(240, 240, 240);
+
+}
+
+.main .navbar {
+  border: 1px solid white;
+}
+
+.navbar div {
+    /* padding: 1rem 2.5rem; */
+}
+
+.nav-item {
+    padding: 10px 30px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    border-right: 1px solid rgb(50,50,50);
+    font-weight: 700;
+    transition: 0.2s ease all;
+    font-size: 0.9rem;
+    width:200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav-item:nth-of-type(3) {
+    border-right: none;
+  }
+  
+  .nav-item:hover {
+    background-color: #262626;
+  }
+  
+  .nav-item.active {
+    background: linear-gradient(90deg, rgb(180, 180, 253), rgb(136, 136, 239));
+    color: rgb(30,30,30);
+  }
+
+  .nav-item:nth-of-type(2) ~ #resume {
+    background-color: pink !important;
+    color: red !;
+  }
+
+  @media (max-width: 400px) {
+    .nav-item {
+      width:100px;
+
+    }
+
+    .navbar {
+      border: 1px solid white;
+    }
+  }

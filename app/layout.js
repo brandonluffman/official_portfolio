@@ -1,6 +1,12 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "./page.css"
+import "./navbar.css"
+import "./footer.css"
 
+// import 'embla-carousel/embla-carousel.css'; // Import Embla Carousel CSS
+
+// import 'swiper/swiper.min.css';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
