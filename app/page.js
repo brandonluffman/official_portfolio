@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import Image from "next/image";
 import { LuSun } from "react-icons/lu";
 import { FaMoon } from "react-icons/fa";
-
+import Head from 'next/head';
 import { BiDownload, BiLinkExternal } from "react-icons/bi";
 import { BsEyeFill, BsGithub } from "react-icons/bs";
 import { IoMdMail } from "react-icons/io";
@@ -16,6 +16,8 @@ import Link from 'next/link';
 
 import FadeIn from "../components/FadeIn";
 import FadeInSection from '@/components/FadeInSection';
+
+
 
 export default function Home() {
   const [ shine, NoShine ] = useState(false);
@@ -66,16 +68,12 @@ export default function Home() {
     NoShine(prevShine => !prevShine);
   };
 
-  // document.querySelectorAll('.nav-item')[1].addEventListener('click', () => {
-  //   const resumeElement = document.getElementsByClassName('resume-grid-item');
-  //   resumeElement.style.border = '1px solid white';
-  // });
+
+  
 
   return (
-<div className={shine ? 'main' : 'main-black'}>
-  <Navbar />
-
-
+      <div className={shine ? 'main' : 'main-black'}>
+      <Navbar />
     <div className="index-main-container">
 
         <div className="index-main-item">
