@@ -332,7 +332,7 @@ export default function Home() {
             <img src="/logos/react.png" alt="React" width={40} />
             <img src="/logos/python.png" alt="React" width={40} />
             <img src="/logos/node.png" alt="React" width={40} />
-            <img src="/logos/postgresql.png" alt="React" width={40} />
+            <img src="/logos/postgres.png" alt="React" width={40} />
 
             </div>
             <div className="portfolio-icons">
