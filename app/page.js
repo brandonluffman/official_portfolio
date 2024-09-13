@@ -277,10 +277,10 @@ export default function Home() {
             <img src="/logos/node.png" alt="React" width={40} />
             <img src="/logos/postgresql.png" alt="React" width={40} />
             </div>
-            <div className="portfolio-icons">
+            {/* <div className="portfolio-icons">
             <div><Link rel="noreferrer" target="_blank" href='https://github.com/brandonluffman/venum'><BsGithub className='portfolio-out' /></Link></div>
             <div><Link rel="noreferrer" target="_blank" href='https://venum.vercel.app'><BiLinkExternal className='portfolio-out' /></Link></div>
-            </div>
+            </div> */}
             </div>
         </div>
         </Link>
@@ -297,10 +297,10 @@ export default function Home() {
             <img src="/logos/node.png" alt="React" width={40} />
             <img src="/logos/postgresql.png" alt="React" width={40} />
             </div>
-            <div className="portfolio-icons">
+            {/* <div className="portfolio-icons">
             <div><Link rel="noreferrer" target="_blank" href='https://github.com/brandonluffman/resumebuilder'><BsGithub className='portfolio-out' /></Link></div>
             <div><Link rel="noreferrer" target="_blank" href='https://theresumebuilderai.com'><BiLinkExternal className='portfolio-out' /></Link></div>
-            </div>
+            </div> */}
             </div>
         </div>
         </Link>
@@ -318,10 +318,10 @@ export default function Home() {
             <img src="/logos/node.png" alt="React" width={40} />
             <img src="/logos/postgresql.png" alt="React" width={40} />
             </div>
-            <div className="portfolio-icons">
+            {/* <div className="portfolio-icons">
             <div><Link rel="noreferrer" target="_blank" href='https://github.com/brandonluffman/juliet'><BsGithub className='portfolio-out' /></Link></div>
             <div><Link rel="noreferrer" target="_blank" href='https://julietchat.vercel.app'><BiLinkExternal className='portfolio-out' /></Link></div>
-            </div>
+            </div> */}
             </div>
         </div>
         </Link>
@@ -340,18 +340,17 @@ export default function Home() {
             <img src="/logos/postgreSQL.png" alt="React" width={40} />
 
             </div>
-            <div className="portfolio-icons">
+            {/* <div className="portfolio-icons">
             <div><Link rel="noreferrer" target="_blank" href='https://github.com/brandonluffman/ranki'><BsGithub className='portfolio-out' /></Link></div>
             <div><Link rel="noreferrer" target="_blank" href='https://ranki.ai'><BiLinkExternal className='portfolio-out' /></Link></div>
-            </div>
+            </div> */}
             </div>
         </div>
         </Link>
         </FadeInSection>
-        {/* <button onClick={showFeatured}>Show All</button> */}
-        {show ? (
-          <div className='portfolio-featured'>
-            <button onClick={showFeatured} className='index-spotlight-btn'>Show Less</button>
+
+        <div className='portfolio-featured'>
+            {/* <button onClick={showFeatured} className='index-spotlight-btn'>Show Less</button> */}
             <div></div>
             <div className='portfolio-featured-container'>
               <h2>Full Stack</h2>
@@ -412,41 +411,13 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-          </div>
-        ):(
-          <div className='portfolio-featured'>
-              <button className='index-spotlight-btn' onClick={showFeatured}>Show All Projects</button>
-              <div></div>
-
-              <div className='portfolio-featured-container-sm'>
-              <h2>Full Stack</h2>
-              <div className='portfolio-featured-grid'>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-
-              </div>
-              <h2>Frontend</h2>
-              <div className='portfolio-featured-grid'>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
-              <h2>Machine Learning & Python</h2>
-              <div className='portfolio-featured-grid'>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
             </div>
-          </div>
-        )}
+ 
+        {/* <button onClick={showFeatured}>Show All</button> */}
+        {/* {show ? (
+
+        ):(
+        )} */}
         {/* <CommitHeatmap /> */}
     </div>
     <Footer />
