@@ -18,13 +18,18 @@
     /* padding: 0rem 2rem; */
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(50, 50, 50, 0.3) 0px 1px 3px -1px;
         overflow: hidden;
-        border: 1px solid rgb(240, 240, 240);
 
 }
 
-.main .navbar {
+.parallax-black .navbar {
+  border: 2px solid black;
+}
+
+
+
+/* .main .navbar {
   border: 1px solid white;
-}
+} */
 
 .navbar div {
     /* padding: 1rem 2.5rem; */
@@ -67,11 +72,11 @@
 
   @media (max-width: 400px) {
     .nav-item {
-      width:100px;
+      width:110px;
 
     }
 
     .navbar {
-      border: 1px solid white;
+      /* border: 1px solid white; */
     }
   }
