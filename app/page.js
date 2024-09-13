@@ -17,6 +17,8 @@ import Link from 'next/link';
 import FadeIn from "../components/FadeIn";
 import FadeInSection from '@/components/FadeInSection';
 import CommitHeatmap from '@/components/CommitHeatmap';
+import StackSlider from '@/components/StackSlider';
+import Featured from '@/components/Featured';
 
 
 
@@ -28,42 +30,42 @@ export default function Home() {
   const sidebarRef = useRef(null);
   const stickyThreshold = 200; // Adjust this value as needed
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sidebarRef.current) return;
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (!sidebarRef.current) return;
       
-      const sidebarTop = sidebarRef.current.getBoundingClientRect().top + window.pageYOffset;
-      const scrollY = window.scrollY;
+  //     const sidebarTop = sidebarRef.current.getBoundingClientRect().top + window.pageYOffset;
+  //     const scrollY = window.scrollY;
 
-      // Determine if the sidebar should be sticky
-      if (scrollY > sidebarTop + stickyThreshold) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
+  //     // Determine if the sidebar should be sticky
+  //     if (scrollY > sidebarTop + stickyThreshold) {
+  //       setIsSticky(true);
+  //     } else {
+  //       setIsSticky(false);
+  //     }
 
-      const sections = document.querySelectorAll('.index-portfolio-grid-item');
-      let currentSection = '';
+  //     const sections = document.querySelectorAll('.index-portfolio-grid-item');
+  //     let currentSection = '';
 
-      sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
-        const sectionHeight = section.clientHeight;
+  //     sections.forEach(section => {
+  //       const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
+  //       const sectionHeight = section.clientHeight;
 
-        if (window.pageYOffset >= sectionTop - sectionHeight / 3 && window.pageYOffset < sectionTop + sectionHeight - sectionHeight / 3) {
-          currentSection = section.getAttribute('id');
-        }
-      });
+  //       if (window.pageYOffset >= sectionTop - sectionHeight / 3 && window.pageYOffset < sectionTop + sectionHeight - sectionHeight / 3) {
+  //         currentSection = section.getAttribute('id');
+  //       }
+  //     });
 
-      setActiveSection(currentSection);
-    };
+  //     setActiveSection(currentSection);
+  //   };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Run on mount to set the initial active section
+  //   window.addEventListener('scroll', handleScroll);
+  //   handleScroll(); // Run on mount to set the initial active section
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
 
 
   const toggleShine = () => {
@@ -71,12 +73,8 @@ export default function Home() {
   };
 
 
-  const showFeatured = () => {
-    setShow(prevShow => !prevShow)
-  }
-
   return (
-    <div className={shine ? 'parallax-container' : 'parallax-black'}>
+    <div className={!shine ? 'parallax-container' : 'parallax-black'}>
       <div className='main'>
       <Navbar />
     <div className="index-main-container">
@@ -135,219 +133,21 @@ export default function Home() {
                         <div>2022 - Present</div>
                     </div>
                   </div>
-                  {/* <div className="index-main-experience">
-                    <h2 className="position">Penn State University</h2>
-                    <div className="position-flexer">
-                        <div>Graduated</div>
-                        <div>2022</div>
-                    </div>
-                  </div> */}
-                  {/* <ul className='experience-stack'>
-                    <li><b>Technologies</b>: JavaScript, Python, React, MySQL, AWS</li>
-                  </ul> */}
               </div>
         </div>
         <div className="index-main-item index-stack">
           <div className="grid-item">
-            <h2>My Tech Stack</h2>
-            <h2 className='stack-subheader'>Full Stack</h2>
-            <div class="slider">
-              <div class="slide-track">
-                <div class="slide">
-                  <img src="/logos/python.png" height="50" width="50" alt="" />
-                </div>
-                <div class="slide">
-                  <img src="/logos/javascript.png" alt="JavaScript" />
-                </div>
-                <div class="slide">
-                  <img src="/logos/react.png" alt="React" />
-                </div>
-                <div class="slide">
-                  <img src="/logos/nextjs.webp" alt="NextJS" />
-                </div>
-                <div class="slide">
-                  <img src="/logos/typescript.png" alt="TypeScript" />
-                </div>
-                <div class="slide">
-                  <img src="/logos/node.png" alt="Node.js" />
-                </div>
-                <div class="slide">
-                  <img src="/logos/html.png" alt="HTML" />
-                </div>
-                <div class="slide">
-                  <img src="/logos/css.png" alt="CSS" />
-                </div>
-        
-                <div class="slide">
-                  <img src="/logos/aws.png" alt="AWS" />
-                </div>
-            
-                <div class="slide">
-                  <img src="/logos/mysql.png" alt="MySQL" />
-                </div>
-             
-                <div class="slide">
-                  <img src="/logos/postgresql.png" alt="PostgreSQL" />
-                </div>
-                </div>
-                </div>
-                <h2 className='stack-subheader'>Machine Learning</h2>
-                <div class="slider">
-              <div class="slide-track">
-                <div class="slide">
-                  <img src="/logos/python.png" height="50" width="50" alt="" />
-                </div>
-                <div class="slide">
-                  <img src="/logos/pytorch.png" alt="PyTorch" />
-                </div>
-                <div class="slide">
-                  <img src="/logos/scikit.png" alt="Scikit-Learn" />
-                </div>
-                <div class="slide">
-                  <img src="/logos/pandas.png" alt="Pandas" />
-                </div>
-                <div class="slide">
-                  <img src="/logos/numpy.png" alt="NumPy" />
-                </div>
-                <div class="slide">
-                  <img src="/logos/fastapi.png" alt="FastAPI" />
-                </div>
-                <div class="slide">
-                  <img src="/logos/spacy.png" alt="spaCy" />
-                </div>
-                <div class="slide">
-                  <img src="/logos/aws.png" alt="AWS" />
-                </div>
-                <div class="slide">
-                  <img src="/logos/mysql.png" alt="MySQL" />
-                </div>
-                <div class="slide">
-                  <img src="/logos/postgresql.png" alt="PostgreSQL" />
-                </div>
-                </div>
-                </div>
-            </div>
+            <StackSlider />
+        </div>
         </div>
     </div>
 
-    {/* <FadeInSection>
-  <h2>Section Title</h2>
-  <p>Some content that fades in as you scroll.</p>
-</FadeInSection> */}
 
-    {/* <nav 
-        ref={sidebarRef}
-        style={{
-          position: isSticky ? 'fixed' : 'relative',
-          top: isSticky ? '0' : 'auto',
-          left: '0',
-          height: '100vh',
-          width: '200px',
-          background: '#000',
-          transition: 'position 0.3s ease'
-        }}
-      >        <ul style={{ listStyleType: 'none', padding: 0 }}>
-          <li style={{ margin: '20px 0' }}>
-            <a href="#section1" style={{ textDecoration: activeSection === 'section1' ? 'underline' : 'none' }}>Venum</a>
-          </li>
-          <li style={{ margin: '20px 0' }}>
-            <a href="#section2" style={{ textDecoration: activeSection === 'section2' ? 'underline' : 'none' }}>Resume Builder</a>
-          </li>
-          <li style={{ margin: '20px 0' }}>
-            <a href="#section3" style={{ textDecoration: activeSection === 'section3' ? 'underline' : 'none' }}>Juliet</a>
-          </li>
-          <li style={{ margin: '20px 0' }}>
-            <a href="#section4" style={{ textDecoration: activeSection === 'section4' ? 'underline' : 'none' }}>Ranki</a>
-          </li>
-        </ul>
-      </nav> */}
+
 
     <div className="index-portfolio-grid" id="portfolio">
 
-      <FadeInSection className='fade-section'>
-      <Link href="https://venum.vercel.app" target='_blank' rel="noreferrer">
-
-        <div className="index-portfolio-grid-item p-grid-1" >
-          <div className="index-portfolio-text">
-            <h2>Venum</h2>
-            <h6>Equity Research application to help investors build more accurate investment decisions.</h6>
-            <div className='portfolio-logos'>
-            <img src="/logos/react.png" alt="React" width={40} />
-            <img src="/logos/python.png" alt="React" width={40} />
-            <img src="/logos/node.png" alt="React" width={40} />
-            <img src="/logos/postgresql.png" alt="React" width={40} />
-            </div>
-            {/* <div className="portfolio-icons">
-            <div><Link rel="noreferrer" target="_blank" href='https://github.com/brandonluffman/venum'><BsGithub className='portfolio-out' /></Link></div>
-            <div><Link rel="noreferrer" target="_blank" href='https://venum.vercel.app'><BiLinkExternal className='portfolio-out' /></Link></div>
-            </div> */}
-            </div>
-        </div>
-        </Link>
-        </FadeInSection>
-        <FadeInSection className='fade-section'>
-          <Link href="https://theresumebuilderai.com" target='_blank' rel="noreferrer">
-        <div className="index-portfolio-grid-item p-grid-2" id="section2">
-        <div className="index-portfolio-text">
-            <h2>Resume Builder</h2>
-            <h6>Application designed to tailor, build, and test resumes.</h6>
-            <div className='portfolio-logos'>
-            <img src="/logos/react.png" alt="React" width={40} />
-            <img src="/logos/python.png" alt="React" width={40} />
-            <img src="/logos/node.png" alt="React" width={40} />
-            <img src="/logos/postgresql.png" alt="React" width={40} />
-            </div>
-            {/* <div className="portfolio-icons">
-            <div><Link rel="noreferrer" target="_blank" href='https://github.com/brandonluffman/resumebuilder'><BsGithub className='portfolio-out' /></Link></div>
-            <div><Link rel="noreferrer" target="_blank" href='https://theresumebuilderai.com'><BiLinkExternal className='portfolio-out' /></Link></div>
-            </div> */}
-            </div>
-        </div>
-        </Link>
-      </FadeInSection>
-      <FadeInSection className='fade-section'>
-      <Link href="https://julietchat.vercel.app" target='_blank' rel="noreferrer">
-
-        <div className="index-portfolio-grid-item p-grid-3" id="section3">
-        <div className="index-portfolio-text">
-            <h2>Juliet</h2>
-            <h6>Chatbot aggregating all points of search while providing public threads.</h6>
-            <div className='portfolio-logos'>
-            <img src="/logos/react.png" alt="React" width={40} />
-            <img src="/logos/python.png" alt="React" width={40} />
-            <img src="/logos/node.png" alt="React" width={40} />
-            <img src="/logos/postgresql.png" alt="React" width={40} />
-            </div>
-            {/* <div className="portfolio-icons">
-            <div><Link rel="noreferrer" target="_blank" href='https://github.com/brandonluffman/juliet'><BsGithub className='portfolio-out' /></Link></div>
-            <div><Link rel="noreferrer" target="_blank" href='https://julietchat.vercel.app'><BiLinkExternal className='portfolio-out' /></Link></div>
-            </div> */}
-            </div>
-        </div>
-        </Link>
-        </FadeInSection>
-        <FadeInSection className='fade-section'>
-        <Link href="https://ranki.ai" target='_blank' rel="noreferrer">
-
-        <div className="index-portfolio-grid-item p-grid-4" id="section4">
-        <div className="index-portfolio-text">
-            <h2>Ranki</h2>
-            <h6>SEO tool to automate SEO and optimize website for rankings.</h6>
-            <div className='portfolio-logos'>
-            <img src="/logos/react.png" alt="React" width={40} />
-            <img src="/logos/python.png" alt="React" width={40} />
-            <img src="/logos/node.png" alt="React" width={40} />
-            <img src="/logos/postgreSQL.png" alt="React" width={40} />
-
-            </div>
-            {/* <div className="portfolio-icons">
-            <div><Link rel="noreferrer" target="_blank" href='https://github.com/brandonluffman/ranki'><BsGithub className='portfolio-out' /></Link></div>
-            <div><Link rel="noreferrer" target="_blank" href='https://ranki.ai'><BiLinkExternal className='portfolio-out' /></Link></div>
-            </div> */}
-            </div>
-        </div>
-        </Link>
-        </FadeInSection>
+                    <Featured />
 
         <div className='portfolio-featured'>
             {/* <button onClick={showFeatured} className='index-spotlight-btn'>Show Less</button> */}
