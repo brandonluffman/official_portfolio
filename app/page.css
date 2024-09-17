@@ -824,11 +824,11 @@ justify-content: left;
 }
 
 .p-grid-1  {
-    background-image: url('../public/optimized/venum.png') !important;
+    background-image: url('../public/optimized/venum.webp') !important;
 }
 
 .p-grid-2  {
-    background-image: url('../public/optimized/resumebuilder-min.png');
+    background-image: url('../public/optimized/resumebuilder-min.webp');
 }
 
 .p-grid-3  {
@@ -915,11 +915,11 @@ justify-content: left;
 }
 
 .portfolio-featured-grid:nth-of-type(1) a:nth-of-type(1) div {
-    background-image: url('/optimized/resumebuilder-min.png');
+    background-image: url('/optimized/resumebuilder-min.webp');
   
 }
 .portfolio-featured-grid:nth-of-type(1) a:nth-of-type(2) div {
-    background-image: url('/optimized/venum-min.png');
+    background-image: url('/optimized/venum.webp');
 }
 .portfolio-featured-grid:nth-of-type(1) a:nth-of-type(3) div {
     background-image: url('/optimized/ranki-min.png');
@@ -945,11 +945,11 @@ justify-content: left;
 } */
 
 .portfolio-featured-grid:nth-of-type(2) a:nth-of-type(2) div {
-    background-image: url('/optimized/phantom-website-min.png');
+    background-image: url('/optimized/phantom-website-min.webp');
 }
 
 .portfolio-featured-grid:nth-of-type(2) a:nth-of-type(5) div {
-    background-image: url('/optimized/react-landing.png');
+    background-image: url('/optimized/react-landing.webp');
 }
 .portfolio-featured-grid:nth-of-type(3) div {
     background-image: url('/github.png');

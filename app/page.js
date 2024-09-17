@@ -30,42 +30,7 @@ export default function Home() {
   const sidebarRef = useRef(null);
   const stickyThreshold = 200; // Adjust this value as needed
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (!sidebarRef.current) return;
-      
-  //     const sidebarTop = sidebarRef.current.getBoundingClientRect().top + window.pageYOffset;
-  //     const scrollY = window.scrollY;
 
-  //     // Determine if the sidebar should be sticky
-  //     if (scrollY > sidebarTop + stickyThreshold) {
-  //       setIsSticky(true);
-  //     } else {
-  //       setIsSticky(false);
-  //     }
-
-  //     const sections = document.querySelectorAll('.index-portfolio-grid-item');
-  //     let currentSection = '';
-
-  //     sections.forEach(section => {
-  //       const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
-  //       const sectionHeight = section.clientHeight;
-
-  //       if (window.pageYOffset >= sectionTop - sectionHeight / 3 && window.pageYOffset < sectionTop + sectionHeight - sectionHeight / 3) {
-  //         currentSection = section.getAttribute('id');
-  //       }
-  //     });
-
-  //     setActiveSection(currentSection);
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll);
-  //   handleScroll(); // Run on mount to set the initial active section
-
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
 
 
   const toggleShine = () => {
@@ -118,7 +83,7 @@ export default function Home() {
             <Link target='_blank' rel='noreferrer' href='https://github.com/brandonluffman'><div><img src='/github.png' width={50}></img></div></Link>
             <Link target='_blank' rel='noreferrer' href='https://www.linkedin.com/in/brandon-luffman10/'><div><img src='/linkedin.webp' width={50}></img></div></Link>
             <a href="mailto:brandonluff10@gmail.com"><div><IoMdMail className="mail-icon" /></div></a>
-            <Link target='_blank' rel='noreferrer' href=''><div></div></Link>
+            {/* <Link target='_blank' rel='noreferrer' href=''><div></div></Link> */}
 
             {/* <div><img src='/linkedin.webp' width={50}></img></div> */}
         </div>
@@ -137,7 +102,7 @@ export default function Home() {
         </div>
         <div className="index-main-item index-stack">
           <div className="grid-item">
-            <StackSlider />
+            {/* <StackSlider /> */}
         </div>
         </div>
     </div>
