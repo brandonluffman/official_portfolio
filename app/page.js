@@ -8,6 +8,7 @@ import Head from 'next/head';
 import { BiDownload, BiLinkExternal } from "react-icons/bi";
 import { BsEyeFill, BsGithub } from "react-icons/bs";
 import { IoMdMail } from "react-icons/io";
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -19,6 +20,7 @@ import FadeInSection from '@/components/FadeInSection';
 import CommitHeatmap from '@/components/CommitHeatmap';
 import StackSlider from '@/components/StackSlider';
 import Featured from '@/components/Featured';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 
@@ -39,6 +41,7 @@ export default function Home() {
 
 
   return (
+    <>
     <div className={!shine ? 'parallax-container' : 'parallax-black'}>
       <div className='main'>
       <Navbar />
@@ -68,20 +71,25 @@ export default function Home() {
                 </Link>
                 </div>
             </div>
-            <div className="grid-item">
-                  <div>
-                    <div onClick={toggleShine} className={shine ? 'shine' : 'noshine'}>
-                    <LuSun />
-                    </div>
-                    <div onClick={toggleShine} className={!shine ? 'shine' : 'noshine'}>
-                    <FaMoon />
-                    </div>
-                  </div>
+            <div className="grid-item toggle-grid-item">
+              <div>
+                {/* Sun icon - clickable only if shine is false */}
+                <div onClick={!shine ? toggleShine : null} className={shine ? 'shine' : 'noshine'}>
+                  <LuSun />
+                </div>
+
+                {/* Moon icon - clickable only if shine is true */}
+                <div onClick={shine ? toggleShine : null} className={!shine ? 'shine' : 'noshine'}>
+                  <FaMoon />
+                </div>
+              </div>
             </div>
         </div>
         <div className="index-main-item grid grid-4">
             <Link target='_blank' rel='noreferrer' href='https://github.com/brandonluffman'><div><img src='/github.png' width={50}></img></div></Link>
-            <Link target='_blank' rel='noreferrer' href='https://www.linkedin.com/in/brandon-luffman10/'><div><img src='/linkedin.webp' width={50}></img></div></Link>
+            {/* <Link target='_blank' rel='noreferrer' href='https://www.linkedin.com/in/brandon-luffman10/'><div><img src='/linkedin.webp' width={50}></img></div></Link> */}
+            <Link target='_blank' rel='noreferrer' href='https://www.linkedin.com/in/brandon-luffman10/'><FontAwesomeIcon icon={faLinkedin} className='linkedin'/></Link>
+
             <a href="mailto:brandonluff10@gmail.com"><div><IoMdMail className="mail-icon" /></div></a>
             {/* <Link target='_blank' rel='noreferrer' href=''><div></div></Link> */}
 
@@ -102,7 +110,7 @@ export default function Home() {
         </div>
         <div className="index-main-item index-stack">
           <div className="grid-item">
-            {/* <StackSlider /> */}
+            <StackSlider />
         </div>
         </div>
     </div>
@@ -135,7 +143,7 @@ export default function Home() {
               </div>
               <h2>Frontend</h2>
               <div className='portfolio-featured-grid'>
-                <Link target="_blank" rel="noreferrer" href='https://h' className="github-link">
+                <Link target="_blank" rel="noreferrer" href='https://hapebeast-silk.vercel.app/' className="github-link">
                   <div></div>
                 </Link>
                 <Link target="_blank" rel="noreferrer" href='https://phantomdm.com' className="github-link">
@@ -188,5 +196,6 @@ export default function Home() {
     <Footer />
     </div>
     </div>
+    </>
   );
 }

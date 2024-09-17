@@ -31,11 +31,21 @@ const techLogos = {
 const TechSlider = ({ title, logos }) => (
   <>
     <h2 className="stack-subheader">{title}</h2>
-    <div className="slider">
+    {/* <div className="slider">
       <div className="slide-track">
         {logos.map((logo, index) => (
           <div className="slide" key={index}>
             <img src={logo.src} alt={logo.alt} height="50" width="50" />
+          </div>
+        ))}
+      </div>
+    </div> */}
+
+    <div className="stack-grid-container">
+      <div className="stack-grid">
+        {logos.map((logo, index) => (
+          <div className="stack-grid-item" key={index}>
+            <img src={logo.src} alt={logo.alt} />
           </div>
         ))}
       </div>

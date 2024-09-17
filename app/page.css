@@ -165,7 +165,7 @@ position: relative;
 
     .index-main-item:nth-of-type(5) {
         /* grid-column: span 1; */
-        width: 70%;
+        /* width: 70%; */
         margin: 0 auto;
     }
   }
@@ -344,15 +344,33 @@ font-size: 1.5rem;
     border-radius: 0px;
 }
 
+.toggle-grid-item {
+    border:none;
+}
+
+.linkedin {
+    color:#0072b1;
+    width: 50px;
+    font-size: 3rem;
+
+}
+
+.resume-grid-item > div {
+    padding-top: 0;
+}
+
 .shine {
-    background-color: rgb(40, 40, 40);
+    /* background: linear-gradient(to right, rgb(180, 180, 253) 50%,black 100%); */
+    background-color: rgb(180, 180, 253);
     transition: 0.2s ease all;
     height: 100%;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
-    box-shadow: inset 1px 1px 12px rgba(20,20,20);
+    box-shadow: inset 1px 1px 12px rgba(0, 0, 0, 0.4);
+    /* border-right: 1px solid rgb(50, 50, 50); */
+    border: none;
 }
 
 .noshine {
@@ -539,6 +557,28 @@ font-size: 1.5rem;
     height: auto;
 }
 
+
+
+.stack-grid {
+    display: grid !important;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    grid-template-columns: repeat(3,3fr);
+}
+
+.stack-grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.stack-grid-item img {
+    width: 20% !important;
+
+}
 
 /* @keyframes scroll {
 	0% { transform: translateX(0); }
@@ -751,10 +791,11 @@ font-size: 1.5rem;
 }
 .index-portfolio-text h2 {
     text-transform: uppercase;
-    letter-spacing: -0.05vw;
+    letter-spacing: -0.15vw;
+    font-weight: 700;
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: rgb(180, 180, 253);
+    color: rgb(255, 255, 255);
     /* -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
 }
@@ -905,14 +946,46 @@ justify-content: left;
 .portfolio-featured-grid  div {
     width: 100%;
     height: 400px;
-    background-color: rgb(0, 0, 0);
     border-radius: 5px;
     margin: 0 auto;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
     box-shadow: 0px 1px 8px rgba(187, 187, 187, 0.341);
+    transition: 0.2s ease-in-out all;
 }
+
+.portfolio-featured-grid div {
+    position: relative;
+    overflow: hidden;  /* Ensures the content stays within the element */
+    transition: all 0.3s ease;  /* Smooth transition */
+  }
+  
+  .portfolio-featured-grid div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0);  /* Transparent by default */
+    backdrop-filter: blur(0);  /* No blur by default */
+    transition: all 0.3s ease;  /* Smooth transition for hover */
+    z-index: 1;
+  }
+  
+  .portfolio-featured-grid div:hover::before {
+    background: rgba(255, 255, 255, 0.2);  /* Semi-transparent background for glass effect */
+    backdrop-filter: blur(5px);  /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(5px);    /* For Safari */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+    z-index: 1;  /* Ensure it's on top of the background image */
+  }
+  
+  .portfolio-featured-grid div:hover {
+    color: #fff;  /* Text color change on hover */
+    z-index: 2;  /* Ensure text is above the backdrop */
+  }
 
 .portfolio-featured-grid:nth-of-type(1) a:nth-of-type(1) div {
     background-image: url('/optimized/resumebuilder-min.webp');
