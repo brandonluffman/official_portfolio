@@ -24,7 +24,7 @@ const techLogos = {
     { src: '/logos/spacy.png', alt: 'spaCy' },
     { src: '/logos/aws.png', alt: 'AWS' },
     { src: '/logos/mysql.png', alt: 'MySQL' },
-    { src: '/logos/postgresql.png', alt: 'PostgreSQL' },
+    { src: '/logos/postgreSQL.png', alt: 'PostgreSQL' },
   ],
 };
 
