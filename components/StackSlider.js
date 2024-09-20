@@ -12,7 +12,7 @@ const techLogos = {
     { src: '/logos/css.png', alt: 'CSS' },
     { src: '/logos/aws.png', alt: 'AWS' },
     { src: '/logos/mysql.png', alt: 'MySQL' },
-    { src: '/logos/postgresql.png', alt: 'PostgreSQL' },
+    { src: '/logos/postgreSQL.png', alt: 'PostgreSQL' },
   ],
   'Machine Learning': [
     { src: '/logos/python.png', alt: 'Python' },
