@@ -155,9 +155,9 @@ export default function Home() {
                 <Link target="_blank" rel="noreferrer" href='https://crypto-price-tracker-xi.vercel.app/' className="github-link">
                   <div></div>
                 </Link>
-                <Link target="_blank" rel="noreferrer" href='https://react-landing-page-jade.vercel.app/' className="github-link">
+                {/* <Link target="_blank" rel="noreferrer" href='https://react-landing-page-jade.vercel.app/' className="github-link">
                   <div></div>
-                </Link>
+                </Link> */}
               </div>
               <h2>Machine Learning & Python</h2>
               <div className='portfolio-featured-grid'>
