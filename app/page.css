@@ -1082,7 +1082,7 @@ justify-content: left;
     transform: translateY(0px);
     transition: 0.5s ease-in-out all;
     /* overflow: hidden; */
-    height: 3500px;
+    /* height: 1703px; */
 }
 @media (min-width: 1300px) {
 
@@ -1090,17 +1090,17 @@ justify-content: left;
     transform: translateY(0px);
     transition: 0.5s ease-in-out all;
     /* overflow: hidden; */
-    height: 2500px;
+    height: 2700px;
 }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1300px) {
 
 .portfolio-featured-container {
     transform: translateY(0px);
     transition: 0.5s ease-in-out all;
     /* overflow: hidden; */
-    height: 7000px;
+    height: 2900px;
 }
 }
 /* Side */
