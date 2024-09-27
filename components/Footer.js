@@ -42,12 +42,12 @@ const Footer = () => {
                 {/* <div className='footer-links-header'><p className='footer-link-header'>General</p></div> */}
                 <div className='footer-link'><Link href='/'>Home</Link></div>
                 {/* <div className='footer-link'><Link href='#about'>About</Link></div> */}
-                <div className='footer-link'><Link href="/Luffman_Resume.pdf" passHref target="_blank">Resume <BiLinkExternal className="resume-icon" /></Link></div>
+                <div className='footer-link'><Link href="/Luffman_Resume.pdf" passHref target="_blank">Resume</Link></div>
                 <div className='footer-link'><Link href='#portfolio'>Portfolio</Link></div>
                 {/* <div className='footer-link'><Link href='/contact'>Contact Me</Link></div> */}
             </div>
           </div>
-
+          {/* <BiLinkExternal className="resume-icon" /> */}
           {/* <div className='footer-links-container'>
             <div className='footer-links'>
                 <div className='footer-links-header'><p className='footer-link-header'>General</p></div>
