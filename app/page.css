@@ -117,6 +117,13 @@ position: relative;
     }
   }
 
+
+  .parallax-black .moving-border::before,
+  .parallax-black .moving-border::after {
+    background: linear-gradient(var(--angle), 
+      #000000, rgb(180, 180, 253), rgb(12, 12, 12)) !important;
+    }
+
 .center {
     text-align: center;
 }
@@ -1107,7 +1114,25 @@ justify-content: left;
 }
 }
 
+@media (max-width: 900px) {
+    .stack-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+    }
 
+    /* .stack-grid-item img {
+        width:50px !important;
+    } */
+}
+
+@media (max-width: 768px) {
+    .stack-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) !important;
+    }
+
+    .stack-grid-item img {
+        width:50px !important;
+    }
+}
 @media (max-width: 400px) {
 
     .grid-1 {
