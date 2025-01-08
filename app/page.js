@@ -52,7 +52,7 @@ export default function Home() {
           <div className="grid-item grid-1">
             {/* <div className="index-main-emoji">👋</div> */}
             <h2 id="about" className="index-main-header center">Brandon Luffman</h2>
-            <p>Full-Stack Engineer with a strong focus in Machine Learning & Data Science.</p>
+            <p>Full-Stack Engineer with a strong focus in Machine Learning & Artificial Intelligence.</p>
             </div>
             </div>
         </div>
